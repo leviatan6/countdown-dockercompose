@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  web:
+    stdin_open: true # So that the serving is not exited with code 0
+    image: yooooomi/easy-countdown
+    environment:
+      TIMER_TARGET: "Fri Jun 22 2025 15:00:00 GMT+0200" # Get help with https://esqsoft.com/javascript_examples/date-to-epoch.htm
+      TIMER_BACKGROUND: https://content.nationalgeographic.com.es/medio/2023/07/14/estatua-de-la-libertad_1193905f_1187183300_230714094659_1280x853.jpg #BAKCGROUND PICTURE
+      TIMER_TITLE: "Libertad" # Titlle. Can be empty
+    ports:
+      - "3333:3000"
+    network_mode: bridge
+    restart: unless-stopped
